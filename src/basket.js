@@ -1,9 +1,9 @@
-module.exports = function Basket(items) {
-  this.items = items.items;
-  this.totalItems = items.totalItems;
-  this.subtotal = items.subtotal;
+module.exports = function Basket(inBasket) {
+  this.items = inBasket.items;
+  this.totalItems = inBasket.totalItems;
+  this.subtotal = inBasket.subtotal;
   this.discounts = [];
-  this.discountAmt = items.discountAmt;
-  this.total = items.total;
+  this.discountAmt = inBasket.discountAmt;
+  this.total = inBasket.total;
   this.currency = "USD"
 };
