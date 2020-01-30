@@ -1,10 +1,10 @@
 module.exports = function Basket(inBasket) {
-  this.items = inBasket.items;
-  this.totalItems = inBasket.totalItems;
-  this.subtotal = inBasket.subtotal;
+  this.items = inBasket.items || {};
+  this.totalItems = inBasket.totalItems || 0;
+  this.subtotal = inBasket.subtotal || 0;
   this.discounts = [];
-  this.discountAmt = inBasket.discountAmt;
-  this.basketTotal = inBasket.basketTotal;
+  this.discountAmt = inBasket.discountAmt || 0;
+  this.basketTotal = inBasket.basketTotal || 0;
   this.currency = "USD"
 
   this.add = function(item, id) {

@@ -1,0 +1,10 @@
+<h1> {{ title }} </h1>
+
+<body>
+  {{# if products }}
+    {{# each products }}
+    <b> {{ this.item.item }} x {{ this.quantity }} </b>
+    <p> {{ this.price }} ({{ this.item.price }}/each)</p>
+    {{/each}}
+  {{/if}}
+</body>

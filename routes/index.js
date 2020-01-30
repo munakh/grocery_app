@@ -38,7 +38,7 @@ router.get('/basket', function(req, res, next) {
     subtotal : inBasket.subtotal,
     discounts : inBasket.discounts,
     discountAmt : inBasket.discountAmt,
-    total : inBasket.total,
+    basketTotal : inBasket.basketTotal,
     currency : inBasket.currency
   });
 });
