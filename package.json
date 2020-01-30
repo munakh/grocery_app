@@ -15,5 +15,11 @@
   "bugs": {
     "url": "https://github.com/munakh/grocery_app/issues"
   },
-  "homepage": "https://github.com/munakh/grocery_app#readme"
+  "homepage": "https://github.com/munakh/grocery_app#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-generator": "^4.16.1",
+    "express-session": "^1.17.0",
+    "mocha": "^7.0.1"
+  }
 }
