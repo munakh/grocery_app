@@ -13,14 +13,14 @@
       {{/if}}
     {{/each}}
     <p>
-      Subtotal: {{ subtotal }} <br>
-      Discount Amount: {{ discountAmt }} <br>
-      Total: {{ basketTotal }} <br>
-      Currency: {{ currency }}
+      Subtotal: <span id="subtotal"> {{ subtotal }} </span> <br>
+      Discount Amount: <span id="discountamt"> {{ discountAmt }} </span> <br>
+      Total: <span id="totalamount"> {{ basketTotal }} </span> <br>
+      Currency: <span id="currency"> {{ currency }} </span>
     </p>
 
     <form> Convert to:
-      <select id="currencies">
+      <select id="currencies" onchange="convertAmount()">
         <option value="USD" title="United States of America">USD</option>
         <option value="GBP" title="United Kingdom">GBP</option>
         <option value="EUR" title="Europe">EUR</option>
@@ -28,6 +28,24 @@
     </form>
 
     <script>
+      function convertAmount() {
+        var x = document.getElementById("currencies");
+        var i = x.selectedIndex;
+        document.getElementById("currency").innerHTML = x.options[i].text;
+        if (i == 0) {
+          document.getElementById("subtotal").innerHTML = "USD"
+          document.getElementById("discountamt").innerHTML = "USD"
+          document.getElementById("totalamount").innerHTML = "USD"
+        } else if (i == 1) {
+          document.getElementById("subtotal").innerHTML = "GBP"
+          document.getElementById("discountamt").innerHTML = "GBP"
+          document.getElementById("totalamount").innerHTML = "GBP"
+        } else if (i == 2) {
+          document.getElementById("subtotal").innerHTML = "EUR"
+          document.getElementById("discountamt").innerHTML = "EUR"
+          document.getElementById("totalamount").innerHTML = "EUR"
+        }
+      };
     </script>
 
     <a href="#" type="button" class="button"><h2>Checkout</h2></a>
