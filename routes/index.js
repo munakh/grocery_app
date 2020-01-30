@@ -3,6 +3,8 @@ var router = express.Router();
 var fs = require('fs');
 var Basket = require('../src/basket.js');
 var products = JSON.parse(fs.readFileSync('./data.json', 'utf8'));
+var config = require('../config');
+var mykey = config.API_KEY;
 
 /* GET home page. */
 router.get('/', function(req, res, next) {

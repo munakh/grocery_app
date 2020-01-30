@@ -27,24 +27,34 @@
       </select>
     </form>
 
+    <script type='text/javascript' src='config.js'></script>
+
     <script>
       function convertAmount() {
         var x = document.getElementById("currencies");
         var i = x.selectedIndex;
         document.getElementById("currency").innerHTML = x.options[i].text;
-        if (i == 0) {
-          document.getElementById("subtotal").innerHTML = "USD"
-          document.getElementById("discountamt").innerHTML = "USD"
-          document.getElementById("totalamount").innerHTML = "USD"
-        } else if (i == 1) {
-          document.getElementById("subtotal").innerHTML = "GBP"
-          document.getElementById("discountamt").innerHTML = "GBP"
-          document.getElementById("totalamount").innerHTML = "GBP"
-        } else if (i == 2) {
-          document.getElementById("subtotal").innerHTML = "EUR"
-          document.getElementById("discountamt").innerHTML = "EUR"
-          document.getElementById("totalamount").innerHTML = "EUR"
-        }
+        var request = new XMLHtttpRequest();
+        var apiUrl = 'http://api.currencylayer.com/live?access_key=' + mykey + '&currencies=USD,GBP,EUR&format=1';
+        request.open("GET", apiUrl);
+        request.send();
+        request.onload = function() {
+          let response = request.responseText;
+          let parsedResponse = JSON.parse(response);
+          if (i == 0) {
+            document.getElementById("subtotal").innerHTML = "USD"
+            document.getElementById("discountamt").innerHTML = "USD"
+            document.getElementById("totalamount").innerHTML = "USD"
+          } else if (i == 1) {
+            document.getElementById("subtotal").innerHTML = "GBP"
+            document.getElementById("discountamt").innerHTML = "GBP"
+            document.getElementById("totalamount").innerHTML = "GBP"
+          } else if (i == 2) {
+            document.getElementById("subtotal").innerHTML = "EUR"
+            document.getElementById("discountamt").innerHTML = "EUR"
+            document.getElementById("totalamount").innerHTML = "EUR"
+          };
+        };
       };
     </script>
 
