@@ -23,7 +23,7 @@ module.exports = function Basket(inBasket) {
       this.totalItems++;
       this.basketTotal += newprice;
       this.discounts.push(basketItem.item.discounts);
-      this.discountAmt = this.subtotal = this.basketTotal;
+      this.discountAmt = this.subtotal - this.basketTotal;
     } else {
       basketItem.quantity++;
       basketItem.price = basketItem.item.price * basketItem.quantity;
