@@ -1,26 +1,16 @@
 {
-  "name": "grocery_app",
-  "version": "1.0.0",
-  "description": "Grocery App with currency conversion",
-  "main": "index.js",
+  "name": "grocery-app",
+  "version": "0.0.0",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node ./bin/www"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/munakh/grocery_app.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/munakh/grocery_app/issues"
-  },
-  "homepage": "https://github.com/munakh/grocery_app#readme",
   "dependencies": {
-    "express": "^4.17.1",
-    "express-generator": "^4.16.1",
-    "express-session": "^1.17.0",
-    "mocha": "^7.0.1",
-    "nodemon": "^2.0.2"
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "express": "~4.16.1",
+    "hbs": "~4.0.4",
+    "http-errors": "~1.6.3",
+    "morgan": "~1.9.1"
   }
 }
