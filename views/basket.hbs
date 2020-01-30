@@ -1,5 +1,9 @@
 <h1> {{ title }} </h1>
 
+<p> Go back to <a href="/" class="button">product list</a>
+  <br>
+  <br>
+
 <body>
   {{# if products }}
     {{# each products }}
@@ -15,5 +19,12 @@
       Total: {{ basketTotal }} <br>
       Currency: {{ currency }}
     </p>
+
+    <form> Convert to:
+    </form>
+
+    {{ else }}
+    <p> Your basket is empty</p>
+    <p> Go back to <a href="/" class="button">product list</a>
   {{/if}}
 </body>
