@@ -27,41 +27,41 @@
       </select>
     </form>
 
-    <script type='text/javascript' src='config.js'></script>
+    <!-- <script type='text/javascript' src='../config.js'></script> -->
 
     <script>
       function convertAmount() {
         var x = document.getElementById("currencies");
         var i = x.selectedIndex;
         document.getElementById("currency").innerHTML = x.options[i].text;
-        var request = new XMLHtttpRequest();
-        var apiUrl = 'http://api.currencylayer.com/live?access_key=' + mykey + '&currencies=USD,GBP,EUR&format=1';
+        var request = new XMLHttpRequest();
+        var apiUrl = 'http://api.currencylayer.com/live?access_key=a0c8e905a4a85b537ae6c052d8f37308&currencies=USD,GBP,EUR&format=1';
         request.open("GET", apiUrl);
         request.send();
         request.onload = function() {
           let response = request.responseText;
           let parsedResponse = JSON.parse(response);
           if (i == 0) {
-            document.getElementById("subtotal").innerHTML = "USD"
-            document.getElementById("discountamt").innerHTML = "USD"
-            document.getElementById("totalamount").innerHTML = "USD"
+            document.getElementById("subtotal").innerHTML = (parsedResponse.quotes.USDUSD * {{ subtotal }});
+            document.getElementById("discountamt").innerHTML = (parsedResponse.quotes.USDUSD * {{ discountAmt }});
+            document.getElementById("totalamount").innerHTML = (parsedResponse.quotes.USDUSD * {{ basketTotal }});
           } else if (i == 1) {
-            document.getElementById("subtotal").innerHTML = "GBP"
-            document.getElementById("discountamt").innerHTML = "GBP"
-            document.getElementById("totalamount").innerHTML = "GBP"
+            document.getElementById("subtotal").innerHTML = (parsedResponse.quotes.USDGBP * {{ subtotal }});
+            document.getElementById("discountamt").innerHTML = (parsedResponse.quotes.USDGBP * {{ discountAmt }});
+            document.getElementById("totalamount").innerHTML = (parsedResponse.quotes.USDGBP * {{ basketTotal }});
           } else if (i == 2) {
-            document.getElementById("subtotal").innerHTML = "EUR"
-            document.getElementById("discountamt").innerHTML = "EUR"
-            document.getElementById("totalamount").innerHTML = "EUR"
-          };
-        };
-      };
+            document.getElementById("subtotal").innerHTML = (parsedResponse.quotes.USDEUR * {{ subtotal }});
+            document.getElementById("discountamt").innerHTML = (parsedResponse.quotes.USDEUR * {{ discountAmt }});
+            document.getElementById("totalamount").innerHTML = (parsedResponse.quotes.USDEUR * {{ basketTotal }});
+          }
+        }
+      }
     </script>
 
     <a href="#" type="button" class="button"><h2>Checkout</h2></a>
 
     {{ else }}
     <p> Your basket is empty</p>
-    <p> Go back to <a href="/" class="button">product list</a>
+    <p> Go back to <a href="/" class="button">product list</a></p>
   {{/if}}
 </body>
