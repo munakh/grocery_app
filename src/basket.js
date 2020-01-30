@@ -24,11 +24,22 @@ module.exports = function Basket(inBasket) {
       this.basketTotal += newprice;
       this.discounts.push(basketItem.item.discounts);
       this.discountAmt = this.subtotal - this.basketTotal;
+    } else if (basketItem.item.id == 3 && basketItem.quantity >=2) {
+      var coupon = 0.5
+        var fullprice = basketItem.item.price
+        var offerprice = fullprice - coupon
+        basketItem.quantity++;
+        basketItem.price += offerprice;
+        this.subtotal = basketItem.item.price * basketItem.quantity;
+        this.totalItems++;
+        this.basketTotal += offerprice;
+        this.discounts.push(basketItem.item.discounts)
+        this.discountAmt = this.subtotal - this.basketTotal
     } else {
       basketItem.quantity++;
       basketItem.price = basketItem.item.price * basketItem.quantity;
       this.totalItems++;
-      this.basketTotal += basketItem.item.price;
+      this.basketTotal += basketItem.price;
       this.subtotal = basketItem.item.price * basketItem.quantity;
       this.discounts.push(basketItem.item.discounts);
       this.discountAmt = 0;
