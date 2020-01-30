@@ -7,6 +7,14 @@
   <li><i> Buy 3 bottles of milk and get 0.50 off </i></li>
 </div>
 
+<div class="basket-link">
+  <a href="/basket" class="button"> Basket
+    {{# if session.basket.totalItems }}
+    <span> ({{ session.basket.totalItems }}) </span>
+    {{/if}}
+  </a>
+</div>
+
 <div class="items">
   {{# each products}}
   <h3>{{ this.item }}</h3>

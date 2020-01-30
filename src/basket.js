@@ -14,10 +14,25 @@ module.exports = function Basket(inBasket) {
                                       quantity: 0,
                                       price: 0 };
     };
-    basketItem.quantity++;
-    basketItem.price = basketItem.item.price * basketItem.quantity;
-    this.totalItems++;
-    this.basketTotal += basketItem.price;
+    if (basketItem.item.id == 4) {
+      var discount = basketItem.item.price * 0.1;
+      var newprice = basketItem.item.price - discount;
+      basketItem.quantity++;
+      basketItem.price = newprice * basketItem.quantity;
+      this.subtotal = basketItem.item.price * basketItem.quantity;
+      this.totalItems++;
+      this.basketTotal += newprice;
+      this.discounts.push(basketItem.item.discounts);
+      this.discountAmt = this.subtotal = this.basketTotal;
+    } else {
+      basketItem.quantity++;
+      basketItem.price = basketItem.item.price * basketItem.quantity;
+      this.totalItems++;
+      this.basketTotal += basketItem.price;
+      this.subtotal = basketItem.item.price * basketItem.quantity;
+      this.discounts.push(basketItem.item.discounts);
+      this.discountAmt = 0;
+    }
   };
 
   this.getItems = function() {
