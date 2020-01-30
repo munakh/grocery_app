@@ -4,7 +4,7 @@ module.exports = function Basket(inBasket) {
   this.subtotal = inBasket.subtotal;
   this.discounts = [];
   this.discountAmt = inBasket.discountAmt;
-  this.total = inBasket.total;
+  this.basketTotal = inBasket.basketTotal;
   this.currency = "USD"
 
   this.add = function(item, id) {
@@ -17,6 +17,14 @@ module.exports = function Basket(inBasket) {
     basketItem.quantity++;
     basketItem.price = basketItem.item.price * basketItem.quantity;
     this.totalItems++;
-    this.total += basketItem.price;
+    this.basketTotal += basketItem.price;
+  };
+
+  this.getItems = function() {
+    var basket = [];
+    for (var id in this.items) {
+      basket.push(this.items[id]);
+    };
+    return basket;
   };
 };
