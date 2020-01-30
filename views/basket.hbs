@@ -3,8 +3,17 @@
 <body>
   {{# if products }}
     {{# each products }}
-    <b> {{ this.item.item }} x {{ this.quantity }} </b>
-    <p> {{ this.price }} ({{ this.item.price }}/each)</p>
+      <b> {{ this.item.item }} x {{ this.quantity }} </b>
+      <p> {{ this.price }} ({{ this.item.price }}/each)</p>
+      {{# if this.item.discounts }}
+        <p> Offer: {{ this.item.discounts }} </p>
+      {{/if}}
     {{/each}}
+    <p>
+      Subtotal: {{ subtotal }} <br>
+      Discount Amount: {{ discountAmt }} <br>
+      Total: {{ basketTotal }} <br>
+      Currency: {{ currency }}
+    </p>
   {{/if}}
 </body>
