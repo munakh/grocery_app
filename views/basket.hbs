@@ -42,17 +42,17 @@
           let response = request.responseText;
           let parsedResponse = JSON.parse(response);
           if (i == 0) {
-            document.getElementById("subtotal").innerHTML = (parsedResponse.quotes.USDUSD * {{ subtotal }});
-            document.getElementById("discountamt").innerHTML = (parsedResponse.quotes.USDUSD * {{ discountAmt }});
-            document.getElementById("totalamount").innerHTML = (parsedResponse.quotes.USDUSD * {{ basketTotal }});
+            document.getElementById("subtotal").innerHTML = (parsedResponse.quotes.USDUSD * {{ subtotal }}).toFixed(2);
+            document.getElementById("discountamt").innerHTML = (parsedResponse.quotes.USDUSD * {{ discountAmt }}).toFixed(2);
+            document.getElementById("totalamount").innerHTML = (parsedResponse.quotes.USDUSD * {{ basketTotal }}).toFixed(2);
           } else if (i == 1) {
-            document.getElementById("subtotal").innerHTML = (parsedResponse.quotes.USDGBP * {{ subtotal }});
-            document.getElementById("discountamt").innerHTML = (parsedResponse.quotes.USDGBP * {{ discountAmt }});
-            document.getElementById("totalamount").innerHTML = (parsedResponse.quotes.USDGBP * {{ basketTotal }});
+            document.getElementById("subtotal").innerHTML = (parsedResponse.quotes.USDGBP * {{ subtotal }}).toFixed(2);
+            document.getElementById("discountamt").innerHTML = (parsedResponse.quotes.USDGBP * {{ discountAmt }}).toFixed(2);
+            document.getElementById("totalamount").innerHTML = (parsedResponse.quotes.USDGBP * {{ basketTotal }}).toFixed(2);
           } else if (i == 2) {
-            document.getElementById("subtotal").innerHTML = (parsedResponse.quotes.USDEUR * {{ subtotal }});
-            document.getElementById("discountamt").innerHTML = (parsedResponse.quotes.USDEUR * {{ discountAmt }});
-            document.getElementById("totalamount").innerHTML = (parsedResponse.quotes.USDEUR * {{ basketTotal }});
+            document.getElementById("subtotal").innerHTML = (parsedResponse.quotes.USDEUR * {{ subtotal }}).toFixed(2);
+            document.getElementById("discountamt").innerHTML = (parsedResponse.quotes.USDEUR * {{ discountAmt }}).toFixed(2);
+            document.getElementById("totalamount").innerHTML = (parsedResponse.quotes.USDEUR * {{ basketTotal }}).toFixed(2);
           }
         }
       }
