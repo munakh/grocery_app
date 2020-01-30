@@ -1,0 +1,26 @@
+[
+  {
+    "id" : 1,
+    "item" : "Soup",
+    "price" : 0.65,
+    "discounts" : null
+  },
+  {
+    "id" : 2,
+    "item" : "Bread",
+    "price" : 0.80,
+    "discounts" : null
+  },
+  {
+    "id" : 3,
+    "item" : "Milk",
+    "price" : 1.15,
+    "discounts" : ["Buy 3 get 0.50 off"]
+  },
+  {
+    "id" : 4,
+    "item" : "Apples",
+    "price" : 1.00,
+    "discounts" : ["10% off"]
+  }
+]
