@@ -13,4 +13,20 @@ router.get('/', function(req, res, next) {
   });
 });
 
+router.get('/add/:id', function(req, res, next) {
+  res.redirect('/');
+});
+
+router.get('/basket', function(req, res, next) {
+  res.render('basket' {
+    title : 'Your basket',
+    products : 'products',
+    subtotal : 'subtotal',
+    discounts : 'discounts',
+    discountAmt : 'discountAmt',
+    total : 'total',
+    currency : 'currency'
+  });
+});
+
 module.exports = router;
