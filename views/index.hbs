@@ -1,2 +1,16 @@
-<h1>{{title}}</h1>
-<p>Welcome to {{title}}</p>
+<h1>Welcome to {{title}}</h1>
+<h3>Select food items from the list below</h3>
+
+<div class="offers">
+  <h3><i> This week's offers: </i></h3>
+  <li><i> Apples are 10% off </i></li>
+  <li><i> Buy 3 bottles of milk and get 0.50 off </i></li>
+</div>
+
+<div class="items">
+  {{# each products}}
+  <h3>{{ this.item }}</h3>
+  <p> {{ this.price }} </p>
+  <a href='#' class="button" role="button"> Add to basket </a>
+  {{/each}}
+</div>
