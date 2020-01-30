@@ -1,16 +1,15 @@
 <h1> {{ title }} </h1>
 
-<p> Go back to <a href="/" class="button">product list</a>
-  <br>
-  <br>
-
 <body>
   {{# if products }}
+  <p> Go back to <a href="/" class="button">product list</a>
+    <br>
+    <br>
     {{# each products }}
       <b> {{ this.item.item }} x {{ this.quantity }} </b>
-      <p> {{ this.price }} ({{ this.item.price }}/each)</p>
+      <p> {{ this.price }} ({{ this.item.price }}/each) </p>
       {{# if this.item.discounts }}
-        <p> Offer: {{ this.item.discounts }} </p>
+        <p><b> Offer: </b> {{ this.item.discounts }} </p>
       {{/if}}
     {{/each}}
     <p>
@@ -21,6 +20,11 @@
     </p>
 
     <form> Convert to:
+      <select id="currencies">
+        <option value="USD" title="United States of America">USD</option>
+        <option value="GBP" title="United Kingdom">GBP</option>
+        <option value="EUR" title="Europe">EUR</option>
+      </select>
     </form>
 
     {{ else }}
