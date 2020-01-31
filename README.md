@@ -17,13 +17,7 @@ I went to the lunchtime talk that the S put on a few weeks ago to advertise this
 <i> For my complete CV please [click here](https://github.com/munakh/CV/blob/master/MunaKhanCV.md) </i>
 
 ### Tech stack:
-- Node.js
-- JavaScript
-- Express
-- Express-Session
-- hbs
-- CurrencyLayer API
-- JSON
+Node.js, Express, Express-Session, Express handlebars (hbs), CurrencyLayer API, JSON, Nodemon
 
 ### To do with more time:
 - TESTS!!
@@ -35,3 +29,37 @@ I went to the lunchtime talk that the S put on a few weeks ago to advertise this
 - Checkout feature working with suitable API
 - Styling
 - Refactoring
+
+### How to use the app:
+
+Clone this repository:
+``` shell
+git clone git@github.com:munakh/grocery_app.git
+```
+
+Install dependencies:
+``` shell
+npm install
+```
+
+Start server:
+``` shell
+npm start
+```
+
+To see returning response:
+- Add 3 apples to cart
+- See terminal for the following data:
+``` shell
+  Basket {
+  items: { '4': { item: [Object], quantity: 3, price: 2.7 } },
+  totalItems: 3,
+  subtotal: 3,
+  discounts: [ [ '10% off' ] ],
+  discountAmt: 0.2999999999999998,
+  basketTotal: 2.7,
+  currency: 'USD',
+  add: [Function],
+  getItems: [Function]
+  }
+```
