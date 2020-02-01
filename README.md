@@ -47,6 +47,11 @@ Start server:
 npm start
 ```
 
+In your browser, navigate to:
+``` shell
+http://localhost:3000/
+```
+
 To see returning response:
 - Add 3 apples to cart
 - See terminal for the following data:
